@@ -17,7 +17,7 @@ api_url = "https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list"
 #this is a json hash giving cocktail ingredients
 
 counter = 0
-while counter <= 20
+while counter <= 40
   open(api_url) do |stream|
   ingredient = JSON.parse(stream.read)
   Ingredient.create(name: ingredient['drinks'][counter]["strIngredient1"])

@@ -7,7 +7,9 @@
       <h3>This cocktail has:</h3>
       <ul>
         <% @cocktail.doses.each do |dose| %>
-          <li><%= dose.description %> | <%= dose.ingredient.name %> - <%= link_to "delete", dose_path(dose), method: :delete %>
+          <li><%= dose.description %> | <%= dose.ingredient.name %> - <%= link_to(dose_path(dose), method: :delete) do %>
+              <i class="fas fa-trash-alt"></i>
+            <% end %>
           </li>
         <% end %>
       </ul>
